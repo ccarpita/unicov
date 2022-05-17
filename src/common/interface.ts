@@ -14,6 +14,7 @@ export interface ParseOptions {
 export type CoverageReporterType =
   | "clover"
   | "cobertura"
+  | "html"
   | "istanbul"
   | "jacoco"
   | "lcov"

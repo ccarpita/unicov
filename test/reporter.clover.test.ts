@@ -3,6 +3,11 @@ import { checkSnapshot, checkOutputSnapshot } from "./util";
 import { Unicov } from "../src";
 
 describe("CloverReporter", () => {
+  const now = Date.now;
+  afterEach(() => {
+    Date.now = now;
+  });
+
   test("Parsing", async () => {
     const unicov = await Unicov.fromCoverage(
       "./test/fixtures/clover-coverage.xml",
@@ -26,6 +31,7 @@ describe("CloverReporter", () => {
       "lcov",
       { caseInsensitive: true }
     );
-    checkOutputSnapshot(unicov, "clover", "clover-output.xml");
+    Date.now = () => 1651974519992;
+    await checkOutputSnapshot(unicov, "clover", "clover-output.xml");
   });
 });

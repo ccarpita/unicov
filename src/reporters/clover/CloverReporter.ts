@@ -53,7 +53,7 @@ export class CloverReporter implements Reporter {
     const root = create({ version: "1.0" });
     const cov = root.ele("coverage");
     cov.att(null, "clover", "3.2.0");
-    cov.att(null, "generated", String(+new Date()));
+    cov.att(null, "generated", String(Date.now()));
     const project = cov.ele("project");
     const pkg = project.ele("package");
     for (const fileCoverage of coverage.files) {

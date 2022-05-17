@@ -11,7 +11,7 @@ module.exports = {
   rootDir: ".",
   setupFilesAfterEnv: ["./test/testSetupFile.js"],
   collectCoverageFrom: ["src/**/*.ts"],
-  coveragePathIgnorePatterns: ["/node_modules/", "<rootDir>/src/main.ts"],
+  coveragePathIgnorePatterns: ["/node_modules/", "/vendor/", "<rootDir>/src/main.ts", "<rootDir>/src/reporters/html/frontend.ts"],
   coverageReporters: [
     // "json-summary",
     "json",

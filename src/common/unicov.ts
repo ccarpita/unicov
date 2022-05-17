@@ -16,6 +16,7 @@ import {
 import {
   CloverReporter,
   CoberturaReporter,
+  HtmlReporter,
   IstanbulReporter,
   JacocoReporter,
   LcovReporter,
@@ -25,6 +26,7 @@ import {
 const REPORTERS: Reporter[] = [
   new CloverReporter(),
   new CoberturaReporter(),
+  new HtmlReporter(),
   new JacocoReporter(),
   new IstanbulReporter(),
   new LcovReporter(),
@@ -184,7 +186,7 @@ export class Unicov {
     if (!reporter) {
       throw new Error(`Reporter not found for type '${reporterType}'`);
     }
-    const defaultFilePath = `${reporterType}.${reporter.extension()}`;
+    const defaultFilePath = `unicov-${reporterType}.${reporter.extension()}`;
     fs.writeFileSync(
       filePath || defaultFilePath,
       reporter.format(this.coverageData)

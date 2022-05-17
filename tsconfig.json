@@ -20,14 +20,17 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "outDir": "lib",
-    "declarationDir": "lib/types"
+    "declarationDir": "lib/types",
+    "types": ["@types/jest"]
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.test.ts"
+    "**/node_modules",
+    "**/*.test.ts",
+    "**/vendor"
   ]
 }

@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest --coverage",
     "update-snapshots": "UPDATE_SNAPSHOTS=1 jest",
-    "build": "tsc",
+    "build": "tsc --build --incremental",
     "lint": "npm run prettier-check",
     "prepare": "npm run build",
     "postversion": "git push && git push --tags",

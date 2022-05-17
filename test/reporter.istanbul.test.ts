@@ -22,7 +22,7 @@ describe("Instanbul JSON parsing", () => {
       "./test/fixtures/istanbul-coverage.json",
       "istanbul"
     );
-    checkOutputSnapshot(unicov, "istanbul", "istanbul-output.json");
+    await checkOutputSnapshot(unicov, "istanbul", "istanbul-output.json");
   });
   test("Invalid istanbul coverage file.", async () => {
     await expect(
